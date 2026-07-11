@@ -5,7 +5,6 @@
   <title>Renato Chavez | Gerente de RRHH</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
   <style>
@@ -16,145 +15,103 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       background: linear-gradient(135deg, #1f1c2c, #928dab);
       color: white;
-      min-height: 100vh;
     }
 
-    /* Navegación */
+    header {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    header h1 {
+      margin-top: 20px;
+      font-size: 2.5em;
+    }
+
+    header p {
+      font-size: 1.2em;
+      opacity: 0.8;
+    }
+
     nav {
       position: sticky;
       top: 0;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0,0,0,0.4);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
       display: flex;
       justify-content: center;
       gap: 30px;
       padding: 15px;
-      z-index: 1000;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
+      transition: 0.3s;
     }
 
     nav a:hover {
       color: #00f7ff;
     }
 
-    /* Encabezado */
-    header {
-      text-align: center;
-      padding: 60px 20px 40px 20px;
-    }
-
-    header img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 4px solid white;
-      object-fit: cover;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    }
-
-    header h1 {
-      margin-top: 20px;
-      font-size: 2.5em;
-      letter-spacing: 0.5px;
-    }
-
-    header p {
-      font-size: 1.2em;
-      opacity: 0.8;
-      margin-top: 5px;
-    }
-
-    /* Secciones y Tarjetas */
     section {
-      padding: 60px 20px;
+      padding: 80px 20px;
       max-width: 900px;
       margin: auto;
       text-align: center;
     }
 
-    section h2 {
-      margin-bottom: 20px;
-      position: relative;
-      display: inline-block;
-    }
-
-    section h2::after {
-      content: '';
-      display: block;
-      width: 50%,
-      height: 3px;
-      background: #00f7ff;
-      margin: 8px auto 0 auto;
-      border-radius: 2px;
-    }
-
     .card {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255,255,255,0.1);
       border-radius: 15px;
       padding: 30px;
+      margin-top: 20px;
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transform: translateY(-10px);
     }
 
-    .contact-info p {
-      margin: 10px 0;
-    }
-
-    /* Botones */
-    button {
-      margin-top: 20px;
-      padding: 12px 28px;
-      border: none;
-      border-radius: 25px;
-      background: #00f7ff;
-      color: #1f1c2c;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: background 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 4px 15px rgba(0, 247, 255, 0.3);
-    }
-
-    button:hover {
-      background: #fff;
-      transform: scale(1.05);
-    }
-
-    button:active {
-      transform: scale(0.95);
-    }
-
-    /* Pie de página */
     footer {
       text-align: center;
-      padding: 40px 20px;
+      padding: 20px;
       opacity: 0.6;
-      font-size: 0.9em;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #00f7ff;
+      color: black;
+      cursor: pointer;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+
+  <header>
+    <!-- IMPORTANTE: guarda tu imagen como foto.jpg en la misma carpeta -->
+    <img src="foto.jpg" alt="Renato Chavez">
+    <h1>Renato Chavez</h1>
+    <p>Gerente de Recursos Humanos</p>
+    <button onclick="saludo()">Saludar</button>
+  </header>
 
   <nav>
     <a href="#sobre">Sobre mí</a>
@@ -162,43 +119,34 @@
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <header>
-    <img src="https://via.placeholder.com/150" alt="Foto de Renato Chavez">
-    <h1>Renato Chavez</h1>
-    <p>Gerente de Recursos Humanos</p>
-    <button onclick="saludo()">Saludar</button>
-  </header>
+  <section id="sobre">
+    <h2>Sobre mí</h2>
+    <div class="card">
+      <p>
+        Profesional en Recursos Humanos con experiencia en gestión del talento,
+        desarrollo organizacional y liderazgo estratégico. Enfocado en potenciar
+        equipos y generar valor en las organizaciones.
+      </p>
+    </div>
+  </section>
 
-  <main>
-    <section id="sobre">
-      <h2>Sobre mí</h2>
-      <div class="card">
-        <p>
-          Profesional en Recursos Humanos con experiencia en gestión del talento,
-          desarrollo organizacional y liderazgo estratégico. Enfocado en potenciar
-          equipos y generar valor en las organizaciones.
-        </p>
-      </div>
-    </section>
+  <section id="experiencia">
+    <h2>Experiencia</h2>
+    <div class="card">
+      <p>
+        Experiencia liderando áreas de RRHH, implementando estrategias de cultura
+        organizacional, reclutamiento y desarrollo del talento.
+      </p>
+    </div>
+  </section>
 
-    <section id="experiencia">
-      <h2>Experiencia</h2>
-      <div class="card">
-        <p>
-          Más de X años liderando áreas de RRHH, implementando estrategias de
-          cultura organizacional, reclutamiento y desarrollo del talento.
-        </p>
-      </div>
-    </section>
-
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <div class="card contact-info">
-        <p><strong>Email:</strong> renato@email.com</p>
-        <p><strong>LinkedIn:</strong> linkedin.com/in/renato</p>
-      </div>
-    </section>
-  </main>
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <div class="card">
+      <p>Email: renato@email.com</p>
+      <p>LinkedIn: linkedin.com/in/renato</p>
+    </div>
+  </section>
 
   <footer>
     <p>© 2026 Renato Chavez</p>
@@ -206,7 +154,7 @@
 
   <script>
     function saludo() {
-      alert("¡Hola! Gracias por visitar mi página 👋");
+      alert("¡Hola Renato! 👋 Bienvenido a tu página profesional");
     }
   </script>
 
